@@ -1,0 +1,22 @@
+<section data-ng-controller="OpportunitiesController" data-ng-init="vendorList()">
+    <div class="page-header">
+        <h1>Published Opportunities</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="opportunity in opportunities" data-ng-href="#!/opportunities/{{opportunity._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="opportunity.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="opportunity.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="opportunity.title"></h4>
+            <small class="list-group-item-text">
+                <span data-ng-bind="opportunity.status"></span>
+            </small>            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!opportunities.$resolved || opportunities.length">
+    	No Published Opportunities yet, please check back later.
+    </div>
+</section>

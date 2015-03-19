@@ -1,0 +1,25 @@
+<section data-ng-controller="OpportunitiesController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Opportunity</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" action="" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="title">Title</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="opportunity.title" id="title" class="form-control" placeholder="Title" required>
+                    </div>
+                </div>
+                <div class="form-group">
+        <a class="btn btn-primary" data-ng-click="cancel();">Cancel</a> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary" data-ng-click="update();">Save</a> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary" data-ng-click="update('Published');">Save and Publish</a>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
